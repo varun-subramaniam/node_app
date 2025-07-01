@@ -1,0 +1,17 @@
+{
+  "name": "horizon",
+  "version": "1.0.0",
+  "description": "Devops Horizon - Docker Training",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}
