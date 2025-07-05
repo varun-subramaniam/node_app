@@ -15,11 +15,11 @@ app.get('/:value', (req, res) => {
     res.send('Hello ' + value);
 });
 
-
-app.listen(8080, async () => {
+const port = process.env.SERVER_PORT || 8080
+app.listen(port, async () => {
     logger.info('Starting the server...');
     await connectDB()
-    logger.info('Listening on port ' + process.env.SERVER_PORT);
+    logger.info('Listening on port ' + port);
     logger.info("Server started successfully");
 });
 

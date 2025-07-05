@@ -5,7 +5,7 @@ const { combine, timestamp, printf, align } = winston.format;
 
 
 const logger = winston.createLogger({
-    level: process.env.LOG_LEVEL,
+    level: process.env.LOG_LEVEL || 'info',
     format: combine(
         align(),
         timestamp({format: 'YYYY-MM-DD HH:mm:ss'}),
@@ -17,10 +17,10 @@ const logger = winston.createLogger({
     ),
     transports : new DailyRotateFile(
         {
-            level: process.env["LOG_LEVEL"],
+            level: process.env["LOG_LEVEL"] || 'info',
             datePattern: 'YYYY-MM-DD',
             maxSize: '19m',
-            filename: 'horizon-%DATE%.log',
+            filename: 'logs/horizon-%DATE%.log',
             frequency: '24h',
         }
     )
