@@ -2,16 +2,20 @@
   "name": "horizon",
   "version": "1.0.0",
   "description": "Devops Horizon - Docker Training",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "test": "jest"
+  },
+  "jest": {
+    "testMatch": ["**/tests/**/*.test.js"]
   },
   "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0",
+    "jest": "^29.7.0",
     "mongoose": "^8.16.1",
     "winston-daily-rotate-file": "^5.0.0"
   }
